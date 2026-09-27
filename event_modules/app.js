@@ -13,6 +13,7 @@ emitter.on("userCreated",userCreatedHandler);
 emitter.emit("userCreated", "Harsh");
 emitter.emit("userCreated", "Harsh");
 
+// listens only once 
 emitter.once("login", () => {
     console.log("First login!");
 });
@@ -20,6 +21,6 @@ emitter.emit("login");
 emitter.emit("login");
 emitter.emit("login");
 
-
+// turn off emitter
 emitter.off("userCreated",userCreatedHandler);
 emitter.emit("userCreated", "Harsh");
