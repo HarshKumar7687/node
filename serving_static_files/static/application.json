@@ -1,0 +1,25 @@
+{
+    "superhero": "Spider-Man",
+    "secretIdentity": "Peter Parker",
+    "publisher": "Marvel Comics",
+    "age": 21,
+    "isActive": true,
+    "homeCity": "New York City",
+    "powers": [
+      "Wall-crawling",
+      "Superhuman strength",
+      "Enhanced agility",
+      "Spider-Sense"
+    ],
+    "gadgets": {
+      "primaryWeapon": "Web-shooters",
+      "suitFeatures": [
+        "Heads-up display",
+        "Glider wings"
+      ]
+    },
+    "affiliations": [
+      "Avengers",
+      "Spider-Verse"
+    ]
+  }
