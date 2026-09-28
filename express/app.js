@@ -13,8 +13,16 @@ app.get("/example",(req,res)=>{
 //route parameters
 app.get("/example/:name/:age",(req,res)=>{
     console.log(req.params);
-    // res.send("EXAMPLE PAGE WITH PARAMETERS!!!")
+    console.log(req.query);
     res.send(req.params.name+" : "+req.params.age);
 })
 
 app.listen(3000);
+
+
+
+/*
+http://localhost:3000/example/Harsh/21?tutorial=NODEJS&sortBy=age
+req.params = { name: 'Harsh', age: '21' }
+req.query = { tutorial: 'NODEJS', sortBy: 'age' }
+*/
