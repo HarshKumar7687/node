@@ -100,7 +100,7 @@ app.post("/api/heroes",(req,res)=>{
 app.put("/api/heroes/:id",(req,res)=>{
     //look for course if doesnt exist return 404
     const hero = superHeroes.find(hero => hero.id == req.params.id);
-    if(!hero) res.status(404).send(`Hero not Found!! <br> Total Heroes Available is ${superHeroes.length}`);
+    if(!hero) return res.status(404).send(`Hero not Found!! <br> Total Heroes Available is ${superHeroes.length}`);
 
     //validate if invalid 400
      const schema = Joi.object({
@@ -123,6 +123,25 @@ app.put("/api/heroes/:id",(req,res)=>{
 
 
 
+
+
+
+
+
+
+//DELETE REQUESTS
+app.delete("/api/heroes/:id",(req,res)=>{
+    //look for hero not existing return 404
+    const hero = superHeroes.find(hero => hero.id == req.params.id);
+    if(!hero) return res.status(404).send(`Hero not Found!! <br> Total Heroes Available is ${superHeroes.length}`);
+
+    //delete
+    const index = superHeroes.indexOf(hero);
+    superHeroes.splice(index,1);
+
+    //return deleted course
+    res.send(hero)
+})
 
 
 
