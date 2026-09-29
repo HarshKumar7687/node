@@ -1,0 +1,7 @@
+REST API = REPRESENTATIONAL STATE TRANSFER APPLICATION PROGRAMMING INTERFACE
+
+REST API uses HTTP methods 
+GET - fetching data
+PUT - updating data
+POST - creating data
+DELETE - delete data
