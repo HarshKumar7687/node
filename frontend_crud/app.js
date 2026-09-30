@@ -37,6 +37,9 @@ app.post("/api/heroes",(req,res)=>{
         imageUrl : req.body.imageUrl
     };
     superHeroes.push(hero);
+    //${JSON.stringify(superHeroes, null, 2)} = list,replacer,space 
+    // [repalcer is null means Don't filter or modify anything. Include everything.]
+    // [space is 2 gives indentation]
     fs.writeFile(
         "./assets/superHeroes.js",
         `const superHeroes = ${JSON.stringify(superHeroes, null, 2)};\n\nmodule.exports = superHeroes;`,
