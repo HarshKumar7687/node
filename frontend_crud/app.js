@@ -22,8 +22,8 @@ app.get("/api/heroes/:id",(req,res)=>{
 });
 
 app.post("/api/heroes",(req,res)=>{
-    if(!req.body){
-        res.status(404).send("Request Empty");
+    if(!req.body.id || !req.body.name){
+        return res.status(404).send("Request Empty");
     }
     let hero = {
         id: req.body.id,
