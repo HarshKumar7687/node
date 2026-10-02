@@ -5,10 +5,10 @@ const superHeroes = [
     "realName": "Peter Parker",
     "power": "Web Shooting",
     "team": "Avengers",
-    "age": 18,
+    "age": 21,
     "city": "New York",
     "isActive": true,
-    "imageUrl": "https://images5.alphacoders.com/115/thumb-1920-1150375.jpg"
+    "imageUrl": "https://images6.alphacoders.com/913/thumb-1920-913243.jpg"
   },
   {
     "id": 2,
