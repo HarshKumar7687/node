@@ -141,6 +141,39 @@ const superHeroes = [
     "city": "Goutham",
     "isActive": true,
     "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbNUPqSQ0O6tlfSPOeF0Teah6hv2c_FKQG52TydcA3JQpbzZ7FMavMyjq1&s=10"
+  },
+  {
+    "id": 14,
+    "name": "Wonder Woman",
+    "realName": "Diana",
+    "power": "Divine Strenght",
+    "team": "DC",
+    "age": 5000,
+    "city": "Amazon",
+    "isActive": true,
+    "imageUrl": "https://images7.alphacoders.com/837/837098.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Super Man",
+    "realName": "Clark Kent",
+    "power": "Super Human",
+    "team": "DC",
+    "age": 50,
+    "city": "Metropolis",
+    "isActive": true,
+    "imageUrl": "https://images.hdqwalls.com/wallpapers/justice-league-superman-black-suit-4k-vw.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Flash",
+    "realName": "Barry Allen",
+    "power": "Super Speed",
+    "team": "DC",
+    "age": 30,
+    "city": "Florida",
+    "isActive": true,
+    "imageUrl": "https://images.wallpapersden.com/image/download/the-lightning-flash-4k_bGtrbGeUmZqaraWkpJRobWllrWdma2U.jpg"
   }
 ];
 
