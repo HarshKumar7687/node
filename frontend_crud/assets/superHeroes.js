@@ -5,10 +5,10 @@ const superHeroes = [
     "realName": "Peter Parker",
     "power": "Web Shooting",
     "team": "Avengers",
-    "age": 25,
+    "age": 21,
     "city": "New York",
     "isActive": true,
-    "imageUrl": "https://i.annihil.us/u/prod/marvel/i/mg/3/50/528537a78c5a4/standard_xlarge.jpg"
+    "imageUrl": "https://images6.alphacoders.com/913/thumb-1920-913243.jpg"
   },
   {
     "id": 2,
@@ -18,8 +18,8 @@ const superHeroes = [
     "team": "Avengers",
     "age": 48,
     "city": "New York",
-    "isActive": true,
-    "imageUrl": "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55/standard_xlarge.jpg"
+    "isActive": false,
+    "imageUrl": "https://wallpapers.com/images/featured/iron-man-superhero-ponky3hlfivddo2m.jpg"
   },
   {
     "id": 3,
@@ -29,8 +29,8 @@ const superHeroes = [
     "team": "Avengers",
     "age": 105,
     "city": "New York",
-    "isActive": true,
-    "imageUrl": "https://i.annihil.us/u/prod/marvel/i/mg/3/20/5239c0b04d0b6/standard_xlarge.jpg"
+    "isActive": false,
+    "imageUrl": "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5359769168001/0a823cb0-01a9-4835-a348-c64187783ccb/d37cb96c-805c-4aa2-9f2f-e62d9eb814c7/1280x720/match/image.jpg"
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@ const superHeroes = [
     "age": 1500,
     "city": "Asgard",
     "isActive": true,
-    "imageUrl": "https://i.annihil.us/u/prod/marvel/i/mg/7/03/526547e2cce35/standard_xlarge.jpg"
+    "imageUrl": "https://c4.wallpaperflare.com/wallpaper/375/342/535/thor-chris-hemsworth-men-mjolnir-wallpaper-preview.jpg"
   },
   {
     "id": 5,
@@ -52,7 +52,7 @@ const superHeroes = [
     "age": 49,
     "city": "New York",
     "isActive": true,
-    "imageUrl": "https://i.annihil.us/u/prod/marvel/i/mg/5/03/553a9d6f0f7f6/standard_xlarge.jpg"
+    "imageUrl": "https://images.hdqwalls.com/wallpapers/hulk-the-next-chapter-begins-he.jpg"
   },
   {
     "id": 6,
@@ -62,8 +62,8 @@ const superHeroes = [
     "team": "Avengers",
     "age": 35,
     "city": "Wakanda",
-    "isActive": true,
-    "imageUrl": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/537ba3d0d6b9b/standard_xlarge.jpg"
+    "isActive": false,
+    "imageUrl": "https://images3.alphacoders.com/110/1101833.jpg"
   },
   {
     "id": 7,
@@ -74,7 +74,7 @@ const superHeroes = [
     "age": 42,
     "city": "New York",
     "isActive": true,
-    "imageUrl": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/526547e5a3e4f/standard_xlarge.jpg"
+    "imageUrl": "https://images8.alphacoders.com/120/1203925.jpg"
   },
   {
     "id": 8,
@@ -85,7 +85,7 @@ const superHeroes = [
     "age": 35,
     "city": "New York",
     "isActive": false,
-    "imageUrl": "https://i.annihil.us/u/prod/marvel/i/mg/6/20/5239c0b04e0b1/standard_xlarge.jpg"
+    "imageUrl": "https://images3.alphacoders.com/110/1108879.jpg"
   },
   {
     "id": 9,
@@ -96,7 +96,7 @@ const superHeroes = [
     "age": 34,
     "city": "Boston",
     "isActive": true,
-    "imageUrl": "https://i.annihil.us/u/prod/marvel/i/mg/0/03/5b7d5e8f5c3c1/standard_xlarge.jpg"
+    "imageUrl": "https://images7.alphacoders.com/999/999185.jpg"
   },
   {
     "id": 10,
@@ -106,8 +106,8 @@ const superHeroes = [
     "team": "Avengers",
     "age": 40,
     "city": "New York",
-    "isActive": true,
-    "imageUrl": "https://i.annihil.us/u/prod/marvel/i/mg/6/60/526547ef7e6e2/standard_xlarge.jpg"
+    "isActive": false,
+    "imageUrl": "https://images4.alphacoders.com/589/589946.jpg"
   },
   {
     "id": 11,
@@ -118,7 +118,7 @@ const superHeroes = [
     "age": 38,
     "city": "San Francisco",
     "isActive": true,
-    "imageUrl": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/537ba3d0d6b9b/standard_xlarge.jpg"
+    "imageUrl": "https://images4.alphacoders.com/108/thumb-1920-1082674.jpg"
   },
   {
     "id": 12,
@@ -129,7 +129,7 @@ const superHeroes = [
     "age": 30,
     "city": "Westview",
     "isActive": true,
-    "imageUrl": "https://example.com/scarlet-witch.jpg"
+    "imageUrl": "https://images.hdqwalls.com/wallpapers/the-scarlet-witch-with-powers-4k-lr.jpg"
   }
 ];
 

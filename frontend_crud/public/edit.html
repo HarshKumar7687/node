@@ -1,0 +1,178 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Hero | HeroVerse</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen bg-gray-950 text-white">
+
+    <header class="py-8 text-center">
+        <h1 class="bg-linear-to-r from-pink-500 to-violet-500 bg-clip-text text-5xl font-extrabold text-transparent">
+            EDIT HERO
+        </h1>
+        <p class="text-gray-400 mt-3">Update your superhero information</p>
+    </header>
+
+    <main class="max-w-2xl mx-auto px-6 py-8">
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl">
+
+            <a href="/" class="inline-block mb-6 text-purple-400 hover:text-purple-300">
+                ← Back to Heroes
+            </a>
+
+            <div id="message" class="text-sm mb-4"></div>
+
+            <form id="editForm" class="space-y-5 hidden">
+
+                <div>
+                    <label for="name" class="block text-sm text-gray-300 mb-2">Hero Name</label>
+                    <input id="name" name="name" required
+                        class="w-full rounded-lg border border-gray-700 bg-gray-950 px-4 py-3 outline-none focus:border-purple-500">
+                </div>
+
+                <div>
+                    <label for="realName" class="block text-sm text-gray-300 mb-2">Real Name</label>
+                    <input id="realName" name="realName" required
+                        class="w-full rounded-lg border border-gray-700 bg-gray-950 px-4 py-3 outline-none focus:border-purple-500">
+                </div>
+
+                <div>
+                    <label for="power" class="block text-sm text-gray-300 mb-2">Superpower</label>
+                    <input id="power" name="power" required
+                        class="w-full rounded-lg border border-gray-700 bg-gray-950 px-4 py-3 outline-none focus:border-purple-500">
+                </div>
+
+                <div>
+                    <label for="team" class="block text-sm text-gray-300 mb-2">Team</label>
+                    <input id="team" name="team" required
+                        class="w-full rounded-lg border border-gray-700 bg-gray-950 px-4 py-3 outline-none focus:border-purple-500">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                        <label for="age" class="block text-sm text-gray-300 mb-2">Age</label>
+                        <input id="age" name="age" type="number" min="0" required
+                            class="w-full rounded-lg border border-gray-700 bg-gray-950 px-4 py-3 outline-none focus:border-purple-500">
+                    </div>
+
+                    <div>
+                        <label for="city" class="block text-sm text-gray-300 mb-2">City</label>
+                        <input id="city" name="city" required
+                            class="w-full rounded-lg border border-gray-700 bg-gray-950 px-4 py-3 outline-none focus:border-purple-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="imageUrl" class="block text-sm text-gray-300 mb-2">Image URL</label>
+                    <input id="imageUrl" name="imageUrl" type="url"
+                        class="w-full rounded-lg border border-gray-700 bg-gray-950 px-4 py-3 outline-none focus:border-purple-500">
+                </div>
+
+                <div>
+                    <label for="isActive" class="block text-sm text-gray-300 mb-2">Hero Status</label>
+                    <select id="isActive" name="isActive"
+                        class="w-full rounded-lg border border-gray-700 bg-gray-950 px-4 py-3 outline-none focus:border-purple-500">
+                        <option value="true">Active</option>
+                        <option value="false">Inactive</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 pt-3">
+                    <button type="submit"
+                        class="flex-1 bg-purple-600 hover:bg-purple-700 rounded-lg py-3 font-semibold transition">
+                        Save Changes
+                    </button>
+
+                    <a href="/"
+                        class="flex-1 text-center bg-gray-800 hover:bg-gray-700 rounded-lg py-3 font-semibold transition">
+                        Cancel
+                    </a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+        const form = document.getElementById("editForm");
+        const message = document.getElementById("message");
+
+        async function loadHero() {
+            try {
+                if (!id) {
+                    throw new Error("Hero ID is missing.");
+                }
+
+                const response = await fetch(`/api/heroes/${id}`);
+
+                if (!response.ok) {
+                    throw new Error("Hero not found.");
+                }
+
+                const hero = await response.json();
+
+                document.getElementById("name").value = hero.name ?? "";
+                document.getElementById("realName").value = hero.realName ?? "";
+                document.getElementById("power").value = hero.power ?? "";
+                document.getElementById("team").value = hero.team ?? "";
+                document.getElementById("age").value = hero.age ?? "";
+                document.getElementById("city").value = hero.city ?? "";
+                document.getElementById("imageUrl").value = hero.imageUrl ?? "";
+                document.getElementById("isActive").value = String(hero.isActive);
+
+                form.classList.remove("hidden");
+            } catch (error) {
+                message.textContent = error.message;
+                message.className = "text-red-400 text-sm mb-4";
+            }
+        }
+
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const updatedHero = {
+                name: document.getElementById("name").value.trim(),
+                realName: document.getElementById("realName").value.trim(),
+                power: document.getElementById("power").value.trim(),
+                team: document.getElementById("team").value.trim(),
+                age: Number(document.getElementById("age").value),
+                city: document.getElementById("city").value.trim(),
+                imageUrl: document.getElementById("imageUrl").value.trim(),
+                isActive: document.getElementById("isActive").value === "true"
+            };
+
+            try {
+                const response = await fetch(`/api/heroes/${id}`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(updatedHero)
+                });
+
+                if (!response.ok) {
+                    throw new Error(await response.text());
+                }
+
+                message.textContent = "Hero updated successfully!";
+                message.className = "text-green-400 text-sm mb-4";
+
+                setTimeout(() => {
+                    window.location.href = "/";
+                }, 700);
+            } catch (error) {
+                message.textContent = "Update failed: " + error.message;
+                message.className = "text-red-400 text-sm mb-4";
+            }
+        });
+
+        loadHero();
+    </script>
+
+</body>
+</html>

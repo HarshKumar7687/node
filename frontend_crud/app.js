@@ -5,7 +5,7 @@ const superHeroes = require('./assets/superHeroes.js');
 
 
 app.use(express.json());
-
+app.use(express.static("public"));
 
 
 //GET REQUESTS

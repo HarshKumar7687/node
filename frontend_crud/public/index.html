@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUPER HEROES</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-950 min-h-screen text-white">
+    <header class="py-8">
+        <h1 class="bg-linear-to-r from-pink-500 to-violet-500 bg-clip-text text-5xl font-extrabold text-transparent text-center">
+            SUPER HEROES!!!
+        </h1>
+        <p class="text-gray-400 text-center mt-3">Meet Earth's Mightiest Heroes</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-8">
+        <div id="heroContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <p class="text-gray-400">Loading superheroes...</p>
+        </div>
+    </main>
+
+    <script>
+        const heroContainer = document.getElementById("heroContainer");
+
+        async function fetchHeroes() {
+            try {
+                const response = await fetch("http://localhost:3000/api/heroes");
+
+                if (!response.ok) {
+                    throw new Error("Failed to fetch heroes");
+                }
+
+                const heroes = await response.json();
+
+                heroContainer.innerHTML = "";
+
+                heroes.forEach(hero => {
+                    const card = document.createElement("div");
+
+                    card.className = "bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:scale-105 hover:border-purple-500 transition duration-300";
+
+                    card.innerHTML = `
+                        <img
+                            src="${hero.imageUrl}"
+                            alt="${hero.name}"
+                            class="w-full h-64 object-cover bg-gray-800"
+                            onerror="this.onerror=null;this.src='https://placehold.co/400x300/1f2937/ffffff?text=Superhero'"
+                        />
+
+                        <div class="p-5">
+                            <div class="flex justify-between items-center gap-2 mb-3">
+                                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-purple-900 text-purple-300">
+                                    ${hero.team}
+                                </span>
+
+                                <span class="text-xs font-semibold px-3 py-1 rounded-full ${
+                                    hero.isActive
+                                    ? "bg-green-900 text-green-300"
+                                    : "bg-red-900 text-red-300"
+                                }">
+                                    ${hero.isActive ? "Active" : "Inactive"}
+                                </span>
+                            </div>
+
+                            <h2 class="text-2xl font-bold text-white mb-1">
+                                ${hero.name}
+                            </h2>
+
+                            <p class="text-gray-400 text-sm mb-4">
+                                ${hero.realName}
+                            </p>
+
+                            <div class="space-y-2 text-sm">
+                                <p>
+                                    <span class="text-gray-500">Power:</span>
+                                    <span class="text-purple-300">${hero.power}</span>
+                                </p>
+
+                                <p>
+                                    <span class="text-gray-500">Age:</span>
+                                    ${hero.age}
+                                </p>
+
+                                <p>
+                                    <span class="text-gray-500">City:</span>
+                                    ${hero.city}
+                                </p>
+                            </div>
+<div class="grid grid-cols-2 gap-3 mt-5">
+    <a href="detail.html?id=${hero.id}"
+       class="text-center bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2.5 rounded-lg transition">
+        View Details
+    </a>
+
+    <a href="edit.html?id=${hero.id}"
+       class="text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg transition">
+        Edit
+    </a>
+
+    <button onclick="deleteHero(${hero.id})"
+       class="col-span-2 bg-red-600/10 border border-red-500/30 hover:bg-red-600 text-red-400 hover:text-white font-semibold py-2.5 rounded-lg transition">
+        Delete Hero
+    </button>
+</div>
+                        </div>
+                    `;
+
+                    heroContainer.appendChild(card);
+                });
+            } catch (error) {
+                console.error("Error:", error);
+
+                heroContainer.innerHTML = `
+                    <p class="text-red-400 col-span-full text-center">
+                        Unable to load superheroes. Please check whether the server is running.
+                    </p>
+                `;
+            }
+        }
+        async function deleteHero(id) {
+            const confirmed = confirm("Are you sure you want to delete this hero?");
+
+            if (!confirmed) {
+                return;
+            }
+
+            try {
+                const response = await fetch(
+                    `http://localhost:3000/api/heroes/${id}`,
+                    {
+                        method: "DELETE"
+                    }
+                );
+
+                if (!response.ok) {
+                    throw new Error(await response.text());
+                }
+
+                alert("Hero deleted successfully!");
+                fetchHeroes();
+            } catch (error) {
+                alert("Failed to delete hero: " + error.message);
+            }
+        }
+        fetchHeroes();
+    </script>
+</body>
+</html>
