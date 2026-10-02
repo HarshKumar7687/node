@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Superhero</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-950 min-h-screen text-white">
+    <header class="py-8">
+        <h1 class="bg-linear-to-r from-pink-500 to-violet-500 bg-clip-text text-5xl font-extrabold text-transparent text-center">
+            CREATE SUPERHERO
+        </h1>
+        <p class="text-gray-400 text-center mt-3">Add a new hero to the team</p>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 pb-12">
+        <form id="heroForm" class="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-xl space-y-6">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="name" class="block text-gray-300 font-semibold mb-2">Hero Name *</label>
+                    <input type="text" id="name" name="name" required
+                        placeholder="e.g. Iron Man"
+                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 outline-none focus:border-purple-500" />
+                </div>
+
+                <div>
+                    <label for="realName" class="block text-gray-300 font-semibold mb-2">Real Name *</label>
+                    <input type="text" id="realName" name="realName" required
+                        placeholder="e.g. Tony Stark"
+                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 outline-none focus:border-purple-500" />
+                </div>
+
+                <div>
+                    <label for="power" class="block text-gray-300 font-semibold mb-2">Superpower *</label>
+                    <input type="text" id="power" name="power" required
+                        placeholder="e.g. Genius intellect"
+                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 outline-none focus:border-purple-500" />
+                </div>
+
+                <div>
+                    <label for="team" class="block text-gray-300 font-semibold mb-2">Team *</label>
+                    <input type="text" id="team" name="team" required
+                        placeholder="e.g. Avengers"
+                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 outline-none focus:border-purple-500" />
+                </div>
+
+                <div>
+                    <label for="age" class="block text-gray-300 font-semibold mb-2">Age *</label>
+                    <input type="number" id="age" name="age" required min="1" max="200"
+                        placeholder="Enter age"
+                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 outline-none focus:border-purple-500" />
+                </div>
+
+                <div>
+                    <label for="city" class="block text-gray-300 font-semibold mb-2">City *</label>
+                    <input type="text" id="city" name="city" required
+                        placeholder="e.g. New York"
+                        class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 outline-none focus:border-purple-500" />
+                </div>
+            </div>
+
+            <div>
+                <label for="imageUrl" class="block text-gray-300 font-semibold mb-2">Image URL</label>
+                <input type="url" id="imageUrl" name="imageUrl"
+                    placeholder="https://example.com/hero.jpg"
+                    class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 outline-none focus:border-purple-500" />
+                <p class="text-gray-500 text-sm mt-2">Optional. Paste a direct link to the hero's image.</p>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <input type="checkbox" id="isActive" name="isActive" checked
+                    class="w-5 h-5 accent-purple-600 cursor-pointer" />
+                <label for="isActive" class="text-gray-300 cursor-pointer">Hero is currently active</label>
+            </div>
+
+            <p id="message" class="text-sm hidden"></p>
+
+            <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                <button type="submit" id="submitButton"
+                    class="flex-1 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white font-bold py-3 rounded-lg transition duration-300">
+                    Create Hero
+                </button>
+
+                <a href="index.html"
+                    class="flex-1 text-center bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 rounded-lg transition duration-300">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        const heroForm = document.getElementById("heroForm");
+        const message = document.getElementById("message");
+        const submitButton = document.getElementById("submitButton");
+
+        heroForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const hero = {
+                name: document.getElementById("name").value.trim(),
+                realName: document.getElementById("realName").value.trim(),
+                power: document.getElementById("power").value.trim(),
+                team: document.getElementById("team").value.trim(),
+                age: Number(document.getElementById("age").value),
+                city: document.getElementById("city").value.trim(),
+                isActive: document.getElementById("isActive").checked,
+                imageUrl: document.getElementById("imageUrl").value.trim()
+            };
+
+            if (
+                !hero.name ||
+                !hero.realName ||
+                !hero.power ||
+                !hero.team ||
+                !hero.city ||
+                !Number.isInteger(hero.age) ||
+                hero.age < 1 ||
+                hero.age > 200
+            ) {
+                message.textContent = "Please enter valid details in all required fields.";
+                message.className = "text-sm text-red-400";
+                return;
+            }
+
+            submitButton.disabled = true;
+            submitButton.textContent = "Creating...";
+            message.className = "text-sm hidden";
+
+            try {
+                const response = await fetch("/api/heroes", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(hero)
+                });
+
+                if (!response.ok) {
+                    throw new Error(await response.text());
+                }
+
+                message.textContent = "Superhero created successfully!";
+                message.className = "text-sm text-green-400";
+
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 800);
+
+            } catch (error) {
+                message.textContent = "Failed to create superhero: " + error.message;
+                message.className = "text-sm text-red-400";
+                submitButton.disabled = false;
+                submitButton.textContent = "Create Hero";
+            }
+        });
+    </script>
+</body>
+</html>

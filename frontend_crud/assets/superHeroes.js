@@ -130,6 +130,17 @@ const superHeroes = [
     "city": "Westview",
     "isActive": true,
     "imageUrl": "https://images.hdqwalls.com/wallpapers/the-scarlet-witch-with-powers-4k-lr.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Batman",
+    "realName": "Bruce Banner",
+    "power": "Tech Gagets",
+    "team": "DC",
+    "age": 48,
+    "city": "Goutham",
+    "isActive": true,
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbNUPqSQ0O6tlfSPOeF0Teah6hv2c_FKQG52TydcA3JQpbzZ7FMavMyjq1&s=10"
   }
 ];
 
