@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Divine Deity | Divine Darshan</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen bg-[#100b08] text-amber-50">
+    <header class="px-6 py-10 text-center">
+        <a href="index.html" class="text-sm text-amber-200/60 hover:text-amber-300 transition">
+            ← Back to Divine Darshan
+        </a>
+        <h1 class="mt-5 bg-gradient-to-r from-amber-300 via-yellow-100 to-orange-400 bg-clip-text text-4xl md:text-5xl font-extrabold text-transparent">
+            ADD A DIVINE DEITY
+        </h1>
+        <p class="mt-3 text-amber-100/50">Expand the sacred collection of Hindu deities</p>
+    </header>
+
+    <main class="mx-auto max-w-4xl px-5 pb-12">
+        <form id="godForm" class="space-y-8 rounded-2xl border border-amber-900/40 bg-[#1b120d] p-6 shadow-2xl shadow-black/30 md:p-9">
+
+            <section>
+                <h2 class="mb-5 border-b border-amber-900/40 pb-3 text-xl font-bold text-amber-300">
+                    Divine Identity
+                </h2>
+
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+                    <div>
+                        <label for="name" class="mb-2 block text-sm font-semibold text-amber-100/80">Deity Name *</label>
+                        <input type="text" id="name" required placeholder="e.g. Lord Shiva"
+                            class="divine-input w-full rounded-lg border border-amber-900/50 bg-[#100b08] px-4 py-3 outline-none transition focus:border-amber-400" />
+                    </div>
+
+                    <div>
+                        <label for="divineName" class="mb-2 block text-sm font-semibold text-amber-100/80">Divine Name *</label>
+                        <input type="text" id="divineName" required placeholder="e.g. Mahadev"
+                            class="divine-input w-full rounded-lg border border-amber-900/50 bg-[#100b08] px-4 py-3 outline-none transition focus:border-amber-400" />
+                    </div>
+
+                    <div>
+                        <label for="domain" class="mb-2 block text-sm font-semibold text-amber-100/80">Divine Domain *</label>
+                        <input type="text" id="domain" required placeholder="e.g. Destruction and Transformation"
+                            class="divine-input w-full rounded-lg border border-amber-900/50 bg-[#100b08] px-4 py-3 outline-none transition focus:border-amber-400" />
+                    </div>
+
+                    <div>
+                        <label for="consort" class="mb-2 block text-sm font-semibold text-amber-100/80">Consort</label>
+                        <input type="text" id="consort" placeholder="e.g. Goddess Parvati"
+                            class="divine-input w-full rounded-lg border border-amber-900/50 bg-[#100b08] px-4 py-3 outline-none transition focus:border-amber-400" />
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="mb-5 border-b border-amber-900/40 pb-3 text-xl font-bold text-amber-300">
+                    Sacred Attributes
+                </h2>
+
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+                    <div>
+                        <label for="weapon" class="mb-2 block text-sm font-semibold text-amber-100/80">Divine Weapon</label>
+                        <input type="text" id="weapon" placeholder="e.g. Trishul"
+                            class="divine-input w-full rounded-lg border border-amber-900/50 bg-[#100b08] px-4 py-3 outline-none transition focus:border-amber-400" />
+                    </div>
+
+                    <div>
+                        <label for="mount" class="mb-2 block text-sm font-semibold text-amber-100/80">Mount / Vahana</label>
+                        <input type="text" id="mount" placeholder="e.g. Nandi"
+                            class="divine-input w-full rounded-lg border border-amber-900/50 bg-[#100b08] px-4 py-3 outline-none transition focus:border-amber-400" />
+                    </div>
+
+                    <div>
+                        <label for="abode" class="mb-2 block text-sm font-semibold text-amber-100/80">Divine Abode</label>
+                        <input type="text" id="abode" placeholder="e.g. Mount Kailash"
+                            class="divine-input w-full rounded-lg border border-amber-900/50 bg-[#100b08] px-4 py-3 outline-none transition focus:border-amber-400" />
+                    </div>
+
+                    <div>
+                        <label for="symbol" class="mb-2 block text-sm font-semibold text-amber-100/80">Sacred Symbol</label>
+                        <input type="text" id="symbol" placeholder="e.g. Third Eye"
+                            class="divine-input w-full rounded-lg border border-amber-900/50 bg-[#100b08] px-4 py-3 outline-none transition focus:border-amber-400" />
+                    </div>
+
+                    <div>
+                        <label for="festival" class="mb-2 block text-sm font-semibold text-amber-100/80">Associated Festival</label>
+                        <input type="text" id="festival" placeholder="e.g. Maha Shivaratri"
+                            class="divine-input w-full rounded-lg border border-amber-900/50 bg-[#100b08] px-4 py-3 outline-none transition focus:border-amber-400" />
+                    </div>
+
+                    <div>
+                        <label for="favouriteMantra" class="mb-2 block text-sm font-semibold text-amber-100/80">Favourite Mantra</label>
+                        <textarea id="favouriteMantra" rows="3" placeholder="e.g. ॐ नमः शिवाय"
+                            class="divine-input w-full resize-y rounded-lg border border-amber-900/50 bg-[#100b08] px-4 py-3 outline-none transition focus:border-amber-400"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="mb-5 border-b border-amber-900/40 pb-3 text-xl font-bold text-amber-300">
+                    Divine Representation
+                </h2>
+
+                <div>
+                    <label for="imageUrl" class="mb-2 block text-sm font-semibold text-amber-100/80">Deity Image URL</label>
+                    <input type="url" id="imageUrl" placeholder="https://example.com/deity-image.jpg"
+                        class="w-full rounded-lg border border-amber-900/50 bg-[#100b08] px-4 py-3 outline-none transition focus:border-amber-400" />
+                    <p class="mt-2 text-xs text-amber-100/40">Optional. Paste a direct link to the deity's image.</p>
+                </div>
+
+                <div id="imagePreviewContainer" class="mt-5 hidden">
+                    <p class="mb-2 text-sm text-amber-100/60">Image Preview</p>
+                    <img id="imagePreview" alt="Deity preview"
+                        class="h-56 w-full rounded-xl border border-amber-900/40 object-contain bg-black/30" />
+                </div>
+            </section>
+
+            <section class="rounded-xl border border-amber-900/40 bg-black/20 p-5">
+                <div class="flex items-start gap-3">
+                    <input type="checkbox" id="isMajorDeity" checked
+                        class="mt-1 h-5 w-5 cursor-pointer accent-amber-500" />
+                    <div>
+                        <label for="isMajorDeity" class="cursor-pointer font-semibold text-amber-100">
+                            Major Deity
+                        </label>
+                        <p class="mt-1 text-sm text-amber-100/45">
+                            Mark this deity as a major deity in the collection. Unchecked deities will be classified as sacred deities.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <p id="message" role="status" aria-live="polite" class="hidden text-sm"></p>
+
+            <div class="flex flex-col gap-4 pt-2 sm:flex-row">
+                <button type="submit" id="submitButton"
+                    class="flex-1 rounded-lg bg-gradient-to-r from-amber-500 to-orange-600 py-3 font-bold text-[#1a0d04] transition hover:from-amber-400 hover:to-orange-500 disabled:cursor-not-allowed disabled:opacity-60">
+                    ✨ Add Divine Deity
+                </button>
+
+                <a href="index.html"
+                    class="flex-1 rounded-lg border border-amber-900/50 bg-[#2a1b12] py-3 text-center font-semibold text-amber-100 transition hover:bg-[#392416]">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        const godForm = document.getElementById("godForm");
+        const message = document.getElementById("message");
+        const submitButton = document.getElementById("submitButton");
+        const imageUrlInput = document.getElementById("imageUrl");
+        const imagePreview = document.getElementById("imagePreview");
+        const imagePreviewContainer = document.getElementById("imagePreviewContainer");
+
+        function showMessage(text, type) {
+            message.textContent = text;
+            message.className = "text-sm " + (
+                type === "success" ? "text-green-400" : "text-red-400"
+            );
+        }
+
+        imageUrlInput.addEventListener("input", () => {
+            const url = imageUrlInput.value.trim();
+
+            if (!url) {
+                imagePreviewContainer.classList.add("hidden");
+                imagePreview.removeAttribute("src");
+                return;
+            }
+
+            try {
+                const parsedUrl = new URL(url);
+
+                if (parsedUrl.protocol !== "http:" && parsedUrl.protocol !== "https:") {
+                    throw new Error("Invalid image URL");
+                }
+
+                imagePreview.src = parsedUrl.href;
+                imagePreviewContainer.classList.remove("hidden");
+            } catch {
+                imagePreviewContainer.classList.add("hidden");
+                imagePreview.removeAttribute("src");
+            }
+        });
+
+        imagePreview.addEventListener("error", () => {
+            imagePreviewContainer.classList.add("hidden");
+        });
+
+        imagePreview.addEventListener("load", () => {
+            imagePreviewContainer.classList.remove("hidden");
+        });
+
+        godForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const god = {
+                name: document.getElementById("name").value.trim(),
+                divineName: document.getElementById("divineName").value.trim(),
+                domain: document.getElementById("domain").value.trim(),
+                weapon: document.getElementById("weapon").value.trim(),
+                mount: document.getElementById("mount").value.trim(),
+                abode: document.getElementById("abode").value.trim(),
+                consort: document.getElementById("consort").value.trim(),
+                symbol: document.getElementById("symbol").value.trim(),
+                festival: document.getElementById("festival").value.trim(),
+                favouriteMantra: document.getElementById("favouriteMantra").value.trim(),
+                isMajorDeity: document.getElementById("isMajorDeity").checked,
+                imageUrl: imageUrlInput.value.trim()
+            };
+
+            if (!god.name || !god.divineName || !god.domain) {
+                showMessage("Please fill in the deity name, divine name, and domain.", "error");
+                return;
+            }
+
+            if (god.imageUrl) {
+                try {
+                    const parsedUrl = new URL(god.imageUrl);
+
+                    if (parsedUrl.protocol !== "http:" && parsedUrl.protocol !== "https:") {
+                        throw new Error("Invalid URL protocol");
+                    }
+                } catch {
+                    showMessage("Please enter a valid image URL starting with http:// or https://.", "error");
+                    return;
+                }
+            }
+
+            submitButton.disabled = true;
+            submitButton.textContent = "Adding Deity...";
+            message.className = "hidden";
+
+            try {
+                const response = await fetch("/api/gods", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(god)
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(errorText || "Request failed");
+                }
+
+                showMessage("Divine deity added successfully!", "success");
+                submitButton.textContent = "Added Successfully ✓";
+
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 900);
+
+            } catch (error) {
+                showMessage("Failed to add deity: " + error.message, "error");
+                submitButton.disabled = false;
+                submitButton.textContent = "✨ Add Divine Deity";
+            }
+        });
+    </script>
+</body>
+</html>

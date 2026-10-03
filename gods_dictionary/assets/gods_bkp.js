@@ -42,7 +42,7 @@ const Gods = [
     "festival": "Brahmotsavam",
     "favouriteMantra": "Om Brahmane Namah",
     "isMajorDeity": true,
-    "imageUrl": "https://i.pinimg.com/736x/09/c1/e7/09c1e7083d4c72953fd253238ac7ee04.jpg"
+    "imageUrl": "https://images.unsplash.com/photo-1606293926075-69a00dbfde81"
   },
   {
     "id": 4,
@@ -57,7 +57,7 @@ const Gods = [
     "festival": "Ganesh Chaturthi",
     "favouriteMantra": "Om Gan Ganapataye Namah",
     "isMajorDeity": true,
-    "imageUrl": "https://images.unsplash.com/photo-1610085927744-7217728267a6?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2FuZXNofGVufDB8fDB8fHww"
+    "imageUrl": "https://images.unsplash.com/photo-1606293926075-69a00dbfde81"
   },
   {
     "id": 5,
@@ -72,7 +72,7 @@ const Gods = [
     "festival": "Hanuman Jayanti",
     "favouriteMantra": "Om Hanumate Namah",
     "isMajorDeity": true,
-    "imageUrl": "https://wallpapercave.com/wp/wp13905000.jpg"
+    "imageUrl": "https://images.unsplash.com/photo-1606293926075-69a00dbfde81"
   },
   {
     "id": 6,
@@ -87,7 +87,7 @@ const Gods = [
     "festival": "Janmashtami",
     "favouriteMantra": "Hare Krishna Hare Krishna, Krishna Krishna Hare Hare",
     "isMajorDeity": true,
-    "imageUrl": "https://i.pinimg.com/736x/a4/60/fc/a460fc208da8d26bcdddf01c6912cc34.jpg"
+    "imageUrl": "https://images.unsplash.com/photo-1606293926075-69a00dbfde81"
   },
   {
     "id": 7,
@@ -102,7 +102,7 @@ const Gods = [
     "festival": "Ram Navami",
     "favouriteMantra": "Shri Ram Jai Ram Jai Jai Ram",
     "isMajorDeity": true,
-    "imageUrl": "https://i.pinimg.com/736x/e5/56/a9/e556a9a97dd22328cc612a9542adc418.jpg"
+    "imageUrl": "https://images.unsplash.com/photo-1606293926075-69a00dbfde81"
   },
   {
     "id": 8,
@@ -117,7 +117,7 @@ const Gods = [
     "festival": "Durga Puja",
     "favouriteMantra": "Om Dum Durgayei Namaha",
     "isMajorDeity": true,
-    "imageUrl": "https://i.pinimg.com/736x/6c/95/25/6c9525b2e612ca1ee55e2a2e9251f121.jpg"
+    "imageUrl": "https://images.unsplash.com/photo-1606293926075-69a00dbfde81"
   },
   {
     "id": 9,
